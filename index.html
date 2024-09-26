@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="es">
     <head>
+        <meta charset="utf-8">
+        <title>Práctica 1</title>
         <link rel="stylesheet" type="text/css" href="./css/style.css">
         <link id="estilo" rel="stylesheet" type="text/css" href="./css/normal.css">
         <script type="text/javascript">
@@ -18,8 +20,6 @@
     </head>
     <body>
         <header>
-            <meta charset="utf-8">
-            <title>Práctica 1</title>
             <h1>qÜestiona</h1>
             <p>qÜestiona es una aplicación web que permite gestionar cuestionarios sobre un determinado tema en el que las posibles respuestas
                 son verdadero o falso. La aplicación se desarrolla como parte de las prácticas de la asignatura Desarrollo de Aplicaciones en Internet del Grado
@@ -31,26 +31,6 @@
                     <li><a href="#londres">Londres</a></li>
                 </ul>
             </nav>
-            <style>
-                section{
-                    counter-reset: contPregunta;
-                }
-
-                .bloque::before{
-                    counter-increment: contPregunta;
-                    content: "Pregunta " counter(contPregunta);
-                }
-
-                .respuesta[data-valor="true"]::before{
-                    content: "verdadero"
-                }
-                .respuesta[data-valor="false"]::before{
-                    content: "falso"
-                }
-
-                @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-                
-            </style>
         </header>
         <main>
             <section id="paris">
@@ -66,7 +46,7 @@
                 </div>
                 <div class="bloque">
                     <div class="pregunta">
-                        La Basílisca del Sacré Coeur es la única iglesia de Montmartre.
+                        La Basílisca del Sacré C&oelig;ur es la única iglesia de Montmartre.
                     </div>
                     <div class="respuesta" data-valor="false"></div>
                 </div>
@@ -97,7 +77,7 @@
             </section>
         </main>
         <footer>
-            <span id="nombre">Daniel Jenaro Fernández Juan - djfj1@alu.ua.es | Desarrollo de Aplicaciones en Internet | Universidad d'Alacant | <a href="#" onclick="changeCSS('./css/normal.css');">Vista normal</a> |
+            <span id="nombre">Daniel Jenaro Fernández Juan - djfj1@alu.ua.es - 53979820Q | Desarrollo de Aplicaciones en Internet | Universidad d'Alacant | <span id="tiempo">[3 horas]</span> | <a href="#" onclick="changeCSS('./css/normal.css');">Vista normal</a> |
                 <a href="#" onclick="changeCSS('./css/compact.css');">Vista compacta</a></span>
         </footer>
     </body>

@@ -10,3 +10,19 @@
     padding: 10px;
     box-shadow: 6px 6px 3px slategray;
 }
+
+section{
+    counter-reset: contPregunta;
+}
+
+.bloque::before{
+    counter-increment: contPregunta;
+    content: "Pregunta " counter(contPregunta);
+}
+
+.respuesta[data-valor="true"]::before{
+    content: "verdadero"
+}
+.respuesta[data-valor="false"]::before{
+    content: "falso"
+}
