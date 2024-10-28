@@ -3,20 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>Práctica 1</title>
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
-        <link id="estilo" rel="stylesheet" type="text/css" href="./css/normal.css">
-        <script type="text/javascript">
-            function changeCSS(cssFile) {
-            var oldlink = document.getElementById("estilo");
-            var newlink = document.createElement("link")
-            newlink.setAttribute("rel", "stylesheet");
-            newlink.setAttribute("type", "text/css");
-            newlink.setAttribute("id", "estilo");
-            newlink.setAttribute("href", cssFile);
-            document.getElementsByTagName("head")[0].replaceChild(newlink, oldlink);
-            }
-        </script>
+        <link rel="stylesheet" type="text/css" href="./css/normal.css">
         <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+        <script src="js/javascript.js"></script>
     </head>
     <body>
         <header>
@@ -33,6 +22,23 @@
             </nav>
         </header>
         <main>
+
+            <div class="formulario" id="nuevoCuestionario">
+                <ul>
+                  <li>
+                    <label for="tema">Tema del cuestionario:</label>
+                    <input type="text" name="tema" id="tema" autofocus>
+                  </li>
+                  <li>
+                    <label for="imagen">URL de la imagen:</label>
+                    <input type="url" name="imagen" id="imagen">
+                  </li>
+                  <li>
+                    <input type="button" name="crea" value="Crear nuevo cuestionario">
+                  </li>
+                </ul>
+              </div>
+
             <section id="paris">
                 <h2>
                     <img src="./img/paris.jpg" alt="foto de paris">
@@ -77,8 +83,7 @@
             </section>
         </main>
         <footer>
-            <span id="nombre">Daniel Jenaro Fernández Juan - djfj1@alu.ua.es - 53979820Q | Desarrollo de Aplicaciones en Internet | Universidad d'Alacant | <span id="tiempo">[3 horas]</span> | <a href="#" onclick="changeCSS('./css/normal.css');">Vista normal</a> |
-                <a href="#" onclick="changeCSS('./css/compact.css');">Vista compacta</a></span>
+            <span id="nombre">Daniel Jenaro Fernández Juan - djfj1@alu.ua.es - 53979820Q | Desarrollo de Aplicaciones en Internet | Universidad d'Alacant | <span id="tiempo">[3 horas]</span></span>
         </footer>
     </body>
 </html>
