@@ -117,8 +117,9 @@ function addPregunta(event) {
     addCruz(nuevoBloque);
 
     formulario.querySelector(`input[name="${section.id}_pregunta"]`).value = "";
-    formulario.querySelector(`input[name="${section.id}_v"]`).checked = true;
-    formulario.querySelector(`input[name="${section.id}_f"]`).checked = false;
+    formulario.querySelectorAll(`input[name="${section.id}_respuesta"]`).forEach(radio => {
+        radio.checked = radio.defaultChecked;
+    })
 }
 
 function addCuestionario(event) {
