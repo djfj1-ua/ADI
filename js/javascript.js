@@ -79,6 +79,8 @@ function addFormPregunta(section) {
 
     const botonAñadir = formulario.querySelector("input[type='button']");
     botonAñadir.addEventListener("click", (event) => addPregunta(event));
+
+    return formulario; // Devuelve el nodo del formulario
 }
 
 function addPregunta(event) {
@@ -126,35 +128,33 @@ function addCuestionario(event) {
     event.preventDefault();
 
     const formulario = document.getElementById('nuevoCuestionario');
-
     const tema = formulario.querySelector('#tema').value.trim();
-    const imagen = formulario.querySelector('#imagen').value.trim();
 
     if (tema === "") {
         alert("Por favor, rellena el tema del cuestionario.");
         return;
     }
 
-    if (imagen === "") {
-        alert("Por favor, proporciona la URL de la imagen.");
-        return;
-    }
-
+    // Crear una nueva sección
     const nuevaSeccion = document.createElement("section");
     nuevaSeccion.id = `c${cuestionarioCounter++}`;
 
-    const titulo = document.createElement("h2");
-    titulo.innerHTML = `<img src="${imagen}" alt="foto de ${tema}"> Cuestionario sobre ${tema}`;
-    nuevaSeccion.appendChild(titulo);
+    // Usar el componente encabezado-cuestionario
+    const encabezado = document.createElement('encabezado-cuestionario');
+    encabezado.setAttribute('data-tema', tema);
+    nuevaSeccion.appendChild(encabezado);
 
+    // Añadir el formulario de preguntas
+    const formularioNodo = addFormPregunta(nuevaSeccion);
+
+    // Añadir la nueva sección al main
     const main = document.querySelector("main");
     main.appendChild(nuevaSeccion);
 
-    addFormPregunta(nuevaSeccion);
-
+    // Limpiar el formulario de nuevo cuestionario
     formulario.querySelector('#tema').value = "";
-    formulario.querySelector('#imagen').value = "";
 
+    // Añadir el enlace de navegación
     const nav = document.querySelector('nav ul');
     const nuevaEntrada = document.createElement('li');
     const enlace = document.createElement('a');
@@ -164,6 +164,8 @@ function addCuestionario(event) {
     nav.appendChild(nuevaEntrada);
 }
 
+
+
 function init() {
     const botonCrear = document.querySelector('input[name="crea"]');
     botonCrear.addEventListener("click", addCuestionario);
@@ -172,7 +174,12 @@ function init() {
     bloques.forEach(bloque => addCruz(bloque));
 
     const secciones = document.querySelectorAll("section");
-    secciones.forEach(section => addFormPregunta(section));
+    secciones.forEach(section => {
+        const formularioNodo = addFormPregunta(section);
+        const imgNode = section.querySelector('h2 img');
+    });
 }
 
+
+// Inicialización al cargar la página
 document.addEventListener("DOMContentLoaded", init);

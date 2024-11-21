@@ -24,11 +24,6 @@ h1{
     font-size: 36px;
 }
 
-h2{
-    font-weight: bold;/*Negrita*/
-    font-size: 25px;
-}
-
 main{
     max-width: 1080px;
     margin: 0 auto;
@@ -46,14 +41,6 @@ section{
 
 .idioma{
     font-style: italic;
-}
-
-img{
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    border: 1px solid lightgray;/*Borde de un pixel*/
-    vertical-align: text-top;/*Alinear el texto con el margen superior de la imagen*/
 }
 
 footer{

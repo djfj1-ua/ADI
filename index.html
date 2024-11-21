@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="./css/normal.css">
         <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
         <script src="js/javascript.js"></script>
+        <script src="js/encabezado-cuestionario.js"></script>
     </head>
     <body>
         <header>
@@ -30,20 +31,13 @@
                     <input type="text" name="tema" id="tema" autofocus>
                   </li>
                   <li>
-                    <label for="imagen">URL de la imagen:</label>
-                    <input type="url" name="imagen" id="imagen">
-                  </li>
-                  <li>
                     <input type="button" name="crea" value="Crear nuevo cuestionario">
                   </li>
                 </ul>
               </div>
 
             <section id="paris">
-                <h2>
-                    <img src="./img/paris.jpg" alt="foto de paris">
-                    Cuestionario sobre París
-                </h2>
+                <encabezado-cuestionario data-tema="parís"></encabezado-cuestionario>
                 <div class="bloque">
                     <div class="pregunta">
                         La ciudad de París se sitúa a ambos lados del río Sena.
@@ -64,10 +58,7 @@
                 </div>
             </section>
             <section id="londres">
-                <h2>
-                    <img src="./img/londres.png" alt="foto de londres">
-                    Cuestionario sobre Londres
-                </h2>
+                <encabezado-cuestionario data-tema="londres"></encabezado-cuestionario>
                 <div class="bloque">
                     <div class="pregunta">
                         Trafalgar Square es uno de los cuatro enclaves declarados Patrimonio de la Humanidad por la Unesco con los que cuenta Londres.
