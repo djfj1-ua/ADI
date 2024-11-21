@@ -62,13 +62,13 @@ class EncabezadoCuestionario extends HTMLElement {
                     img.src = photoUrl;
                     img.alt = `Imagen de ${tema}`;
                 } else {
-                    img.src = './img/img_error.jpg';
+                    img.src = 'https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57723/globe_east_540.jpg';
                     img.alt = 'Imagen no disponible';
                 }
             })
             .catch(function () {
                 const img = componente.shadowRoot.querySelector('img');
-                img.src = './img/img_error.jpg';
+                img.src = 'https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57723/globe_east_540.jpg';
                 img.alt = 'Error al cargar la imagen';
             });
 
